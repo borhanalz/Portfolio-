@@ -5,6 +5,7 @@ import LangSwitch from '../../UI/LangSwitch/LangSwitch';
 import { useWindowSize } from 'usehooks-ts';
 import MobileNavMenu from './MobileNavMenu';
 import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
+import SkillsSlider from 'Components/SkillsSlider/SkillsSlider';
 
 interface Iheader {
    homeText:string,
@@ -17,10 +18,10 @@ const Header:FC<Iheader> = ({homeText,aboutText,works}) => {
    const [MobileNavStatus, setMobileNavStatus] = useState(false)
   return (
    <>
-    <header className='p-8 px-36'>
+    <header className='p-4 md:p-8'>
         <div className={`grid ${width>1100?'grid-cols-3':'grid-cols-2'}`}>
             <div className='text-left mt-2'>
-               <h1 className='text-3xl font-bold'>Borhan Alizadeh</h1> 
+               <h1 className='text-lg md:text-3xl font-bold'>Borhan Alizadeh</h1> 
             </div>
             {width>1100&&<div className='mt-2 flex justify-evenly'>
                <p>{homeText}</p><p>{aboutText}</p><p>{works}</p>
