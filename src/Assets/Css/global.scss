@@ -4,7 +4,13 @@
 @import '../Colors/colors';
 @import './antd.scss';
 
+@font-face {
+    font-family: morraba;
+    src: url('../Fonts/Morabba-Medium.woff2');
+}
+
 body {    
+font-family: morraba;
 margin: 0;
 padding: 0;
 background-color:$Primary_One;

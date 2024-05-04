@@ -15,8 +15,8 @@ const LangSwitch = () => {
     {
       value: "/en",
       label: (
-        <div className="text-white flex justify-between">
-          <Image alt="Eng Flag" src={EngFlag} className="w-10" />
+        <div className="text-white flex justify-evenly">
+          <Image alt="Eng Flag" src={EngFlag} className="w-11" />
           <p>EN</p>
         </div>
       ),
@@ -24,8 +24,8 @@ const LangSwitch = () => {
     {
       value: "/fa",
       label: (
-        <div className="flex text-white justify-between">
-          <Image alt="Iran Flag" src={iranFlag} className="w-10" />
+        <div className="flex text-white justify-evenly">
+          <Image alt="Iran Flag" src={iranFlag} className="w-11" />
           <p>Fa</p>
         </div>
       ),
@@ -35,9 +35,9 @@ const LangSwitch = () => {
     <Select
       defaultValue={pathname}
       options={items}
-      className="w-32"
+      className="w-32 h-11"
       rootClassName="bg-transparent"
-      onChange={(e, n) => router.replace(e)}
+      onChange={(e, n) => {router.replace(e)}}
     />
   );
 };
