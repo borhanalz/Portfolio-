@@ -47,7 +47,7 @@ const Experiences: React.FC = () => (
         orientation="left"
         orientationMargin="0"
       >
-        <p className="text-[50px] text-[#A6BBCC]">Experiences</p>
+        <p className="text-3xl md:text-[50px] text-[#A6BBCC]">Experiences</p>
       </Divider>
     <List
       itemLayout="horizontal"

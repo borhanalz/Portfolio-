@@ -8,11 +8,11 @@ const AboutMe = () => {
   return (
     <div className='mt-10'>
          <Divider style={{height:'60px'}} orientation="left" orientationMargin="0">
-      <p className='text-[#A6BBCC] text-[50px] class'>About Me</p>
+      <p className='text-[#A6BBCC] text-3xl md:text-[50px] class'>About Me</p>
     </Divider>
     <div className='px-10 text-base mt-10'>
 
-    <p style={{wordSpacing:'3px'}}>
+    <p style={{wordSpacing:'3px',lineHeight:'35px',textAlign:'justify'}}>
         
         Hey, I'm Borhan Alizadeh, and I've been navigating the programming realm for three years now.
         

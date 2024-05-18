@@ -4,21 +4,43 @@
 @import '../Colors/colors';
 @import './antd.scss';
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $Primary_Two; 
+  border-radius: 10px;
+}
+
 @font-face {
     font-family: morraba;
-    src: url('../Fonts/Morabba-Medium.woff2');
+    src: url('../Fonts/Morabba/Morabba-Medium.woff2');
+}
+
+@font-face {
+  font-family: sulphur;
+  src: url('../Fonts/Salphur/SulphurPoint-Regular.ttf');
 }
 
 body {    
-font-family: 'Sulphur Point';
+font-family: sulphur;
 margin: 0;
 padding: 0;
 background-color:$Primary_One;
 color:#ffff;
 };
+
 :lang(fa){
     font-family: morraba;
 }
+
 .slick-slide > div {
     margin:0 10px;
 }
