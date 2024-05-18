@@ -1,6 +1,9 @@
 import Image from "next/image";
 import myImage from 'Assets/Images/2023-11-29 13.10.jpg'
 import SkillsSlider from "Components/SkillsSlider/SkillsSlider";
+import AboutMe from "Components/AboutMe/AboutMe";
+import Works from "Components/Works/Works";
+import Experiences from "Components/Experiences/Experiences";
 
 export default function Home() {
   return <div>
@@ -15,5 +18,8 @@ export default function Home() {
     </div>
   </div>
   <SkillsSlider/>
+  <AboutMe/>
+  <Works/>
+  <Experiences/>
   </div>
 }

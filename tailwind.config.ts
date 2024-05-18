@@ -1,10 +1,5 @@
 import type { Config } from "tailwindcss";
 
-const {colors:defaultColors}=require('tailwindcss/colors');
-
-const colors = {
-  ...defaultColors,...{'primaryOne':'#221F1F'}
-}
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,8 +7,8 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors:colors,
     extend: {
+      colors:{customColors:{primaryOne:'#221F1F'}},
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

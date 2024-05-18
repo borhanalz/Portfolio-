@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Ichildren } from '../global'
+import { Ichildren } from '../Types/global'
 import { ConfigProvider } from 'antd'
 
 const AntdConfigProvider:FC<Ichildren> = ({children}) => {

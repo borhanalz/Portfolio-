@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import 'Assets/Css/global.scss'
 import Header from "Components/_core/Layouts/Header/Header";
 import Container from "Components/_core/Layouts/Container/Container";
-import MainProvider from "Core/Types/Providers/MainProvider";
+import MainProvider from "Core/Providers/MainProvider";
 import { useTranslations } from "next-intl";
 import MainLayout from "Components/_core/Layouts/MainLayout";
 

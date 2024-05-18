@@ -10,9 +10,15 @@
 }
 
 body {    
-font-family: morraba;
+font-family: 'Sulphur Point';
 margin: 0;
 padding: 0;
 background-color:$Primary_One;
 color:#ffff;
 };
+:lang(fa){
+    font-family: morraba;
+}
+.slick-slide > div {
+    margin:0 10px;
+}

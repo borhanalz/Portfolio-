@@ -16,3 +16,8 @@
 .ant-select-single .ant-select-selection-item {
   color: #fff;
 }
+
+.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-no-default-orientation-margin-left::after{
+  background-color: #A6BBCC;
+  height: 5px;
+}

@@ -9,10 +9,13 @@ interface IMobileNavMenu{
   menuStatus:boolean,
   setMenuStatus:(type:boolean)=>void
 }
-
+const headerStyle:any = {
+  header: { backgroundColor: '#221F1F' }
+}
 const MobileNavMenu:FC<IMobileNavMenu> = ({setMenuStatus,homeText,menuStatus,aboutText,works}) => {
   return (
-    <Drawer onClose={()=>setMenuStatus(false)} headerStyle={{background:'#221F1F'}} open={menuStatus}>
+    <Drawer onClose={()=>setMenuStatus(false)}   style={headerStyle}
+    open={menuStatus}>
         <div className='h-full w-full bg-primaryOne text-right space-y-5 px-4 text-lg'>
           <p>{homeText}</p><p>{aboutText}</p><p>{works}</p>
         </div>
