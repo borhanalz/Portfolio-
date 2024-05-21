@@ -6,6 +6,7 @@ import Container from "Components/_core/Layouts/Container/Container";
 import MainProvider from "Core/Providers/MainProvider";
 import { useTranslations } from "next-intl";
 import MainLayout from "Components/_core/Layouts/MainLayout";
+import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
