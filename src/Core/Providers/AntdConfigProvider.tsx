@@ -6,7 +6,7 @@ const AntdConfigProvider:FC<Ichildren> = ({children}) => {
   return (
     <ConfigProvider
      theme={{
-        token:{fontFamily:'morraba'}
+        token:{fontFamily:'sulphur'}
      }}
     >
         {children}

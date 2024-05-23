@@ -1,12 +1,29 @@
 "use client";
-import { Divider } from "antd";
+import { Divider, Modal } from "antd";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { FaCss3, FaReact } from "react-icons/fa";
 import Slider from "react-slick";
 import promotionLoginImg from "Assets/Images/PromotionLogin.png";
-
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 const Works = () => {
+
+  // const lgRef:any = useRef(null);
+  // const images = [
+  //   { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', alt: 'Image 1' },
+  //   { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', alt: 'Image 2' },
+  //   { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', alt: 'Image 3' },
+  //   // Add more images as needed
+  // ];
+  // const openGallery = () => {
+  //   if (lgRef.current) {
+  //     lgRef.current.openGallery();
+  //   }
+  // };
   const settings = {
     dots: true,
     infinite: false,
@@ -43,13 +60,11 @@ const Works = () => {
   };
   return (
     <div className="mt-20">
-      <Divider
-        style={{ height: "60px" }}
-        orientation="left"
-        orientationMargin="0"
-      >
-        <p className="text-[#A6BBCC] text-3xl md:text-[50px] class">Works</p>
-      </Divider>
+      <div className="my-20">
+        <p className="text-3xl text-center opacity-45 md:text-[40px] text-[#A6BBCC]">
+          Projects
+        </p>
+      </div>
       <Slider {...settings}>
         <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
@@ -101,6 +116,29 @@ const Works = () => {
           </div>
         </div>
       </Slider>
+      {/* <div>
+      <img
+        src={images[0].thumb}
+        alt={images[0].alt}
+        style={{ cursor: 'pointer' }}
+        onClick={openGallery}
+      />
+      <LightGallery
+        onInit={(ref) => {
+          if (ref) {
+            lgRef.current = ref.instance;
+          }
+        }}
+        speed={500}
+        plugins={[lgThumbnail, lgZoom]}
+        dynamic
+        dynamicEl={images.map((image) => ({
+          src: image.src,
+          thumb: image.thumb,
+          alt: image.alt,
+        }))}
+      />
+    </div> */}
     </div>
   );
 };
