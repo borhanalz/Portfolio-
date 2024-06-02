@@ -1,100 +1,107 @@
 "use client";
 import React from "react";
-import type { StepsProps } from "antd";
-import { Avatar, Divider, List, Popover, Steps } from "antd";
+import { List } from "antd";
 import Image from "next/image";
 import tipaxLogo from "Assets/Images/tipax-logo.png";
-import { BiCircle, BiUserCheck } from "react-icons/bi";
-import { CiCircleList } from "react-icons/ci";
-import { MdWork } from "react-icons/md";
-import Slider from "react-slick";
+import rmtoLogo from "Assets/Images/RMTO_Logo.png";
+import saminLogo from "Assets/Images/samin.jpg";
+import { differenceInMonths } from "date-fns";
 
 const Experiences: React.FC = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    autoplay: true,
-    speed:2000,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+  const experienceData = [
+    {
+      id: 1,
+      logo: tipaxLogo,
+      jobTitle: "Front-End Developer",
+      companyTitle: "Tipaxco/تیپاکس , Freelance",
+      startedDate: "2023/07/10",
+      endDate: "present",
+      location: "Tehran , Tehran Province Iran . Remote",
+      description: `Front-end development of internal and external websites of
+ the company. - Construction of a panel for the
+ organization's price engineering, which has sections for
+ calculating the price of logistics transfers. - Creating a
+ promotion panel to register various events and register a
+ discount code for each event for the organization's
+ representatives across the country - Building a tracking
+ website to track the shipment - Creating a website to change
+ the user's destination address for delivery - Creating a
+ heatmap to view successful and unsuccessful delivery
+ packages for managers`,
+    },
+    {
+      id: 2,
+      logo: rmtoLogo,
+      jobTitle: "Front-End Developer",
+      companyTitle:
+        "Iran Road Maintenance & Transportation Organization, Freelance",
+      startedDate: "2024/02/10",
+      endDate: "present",
+      location: "Tehran , Tehran Province Iran . Remote",
+      description: `Creating a user management panel for the passenger fleet development system of Iran Road Organization`,
+    },
+    {
+      id: 3,
+      logo: saminLogo,
+      jobTitle: "Front-End Developer",
+      companyTitle: "Fanavaran Pishro Samin, FullTime",
+      startedDate: "2023/07/05",
+      endDate: "present",
+      location: "Tehran , Tehran Province Iran . Remote",
+      description: `Creating a Logestic Softwares For Companies Which Work On Field Of Logestic`,
+    },
+    {
+      id: 4,
+      logo: tipaxLogo,
+      jobTitle: "Front-End Developer",
+      companyTitle: "Freelance",
+      startedDate: "2022/11/12",
+      endDate: "2023/04/12",
+      location: "Tehran , Tehran Province Iran . Remote",
+      description: `Carrying out personal projects( Freelance )`,
+    },
+  ];
+  const now = new Date();
+
   return (
     <div className="mt-10">
-      <div className="my-20">
+      <div className="mt-20 mb-10">
         <p className="text-3xl text-center opacity-45 md:text-[40px] text-[#A6BBCC]">
           Experiences
         </p>
       </div>
       <List
-      bordered
-      dataSource={[
-        'Racing car sprays burning fuel into crowd.',
-        'Japanese princess to wed commoner.',
-        'Australian walks 100km after outback crash.',
-        'Man charged over missing wedding girl.',
-        'Los Angeles battles huge wildfires.',
-      ]
-      }
-      renderItem={(item) => {
-       return <List.Item>
-          <div className="mt-10">
-           <div className="inline-block">
-              <Image src={tipaxLogo} alt="tipax" className="w-28" />
-            </div>
-          <div>
-            <div className="space-y-2">
-              <h2 className="text-xl text-customColors-primaryTwo">Front-End Developer</h2>
-              <p className="text-sm">Tipaxco/تیپاکس , Freelance</p>
-              <p className="text-xs">Jul 2023 - Present , 11mos</p>
-              <p className="text-xs">Tehran , Tehran Province Iran . Remote</p>
-              <p className="text-sm text-left">
-                {`
-                    Front-end development of internal and external websites of
-                    the company. - Construction of a panel for the
-                    organization's price engineering, which has sections for
-                    calculating the price of logistics transfers. - Creating a
-                    promotion panel to register various events and register a
-                    discount code for each event for the organization's
-                    representatives across the country - Building a tracking
-                    website to track the shipment - Creating a website to change
-                    the user's destination address for delivery - Creating a
-                    heatmap to view successful and unsuccessful delivery
-                    packages for managers`}
-              </p>
-            </div>
-          </div>
-        </div>
-        </List.Item>
-      }}
-    />
+        dataSource={experienceData}
+        renderItem={(item) => {
+          return (
+            <List.Item>
+              <div className="mt-10">
+                <div className="inline-block">
+                  <Image src={item.logo} alt="tipax" className="w-20" />
+                </div>
+                <div>
+                  <div className="space-y-2">
+                    <h2 className="text-xl text-customColors-primaryTwo">
+                      {item.jobTitle}
+                    </h2>
+                    <p className="text-sm">{item.companyTitle}</p>
+                    <p className="text-sm">{`${item.startedDate}-${
+                      item.endDate
+                    }, ${
+                      differenceInMonths(
+                        item.endDate == "present" ? now : item.endDate,
+                        item.startedDate
+                      ) + 1
+                    } Mos`}</p>
+                    <p className="text-xs">{item.location}</p>
+                    <p className="text-sm text-left">- {item.description}</p>
+                  </div>
+                </div>
+              </div>
+            </List.Item>
+          );
+        }}
+      />
     </div>
   );
 };

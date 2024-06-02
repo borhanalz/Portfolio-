@@ -9,7 +9,7 @@ const Defination = () => {
     })
   return (
     <div className="definationDiv font-extrabold text-2xl lg:text-7xl space-y-10 my-32">
-    <h1 className="text-customColors-primaryTwo">Hello ، Im Borhan Alizadeh</h1>
+    <h1 className="text-customColors-primaryTwo">Hello, im Borhan Alizadeh</h1>
     <h2>Front-End Developer Based In Iran</h2>
   </div>
   )

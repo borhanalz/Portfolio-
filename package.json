@@ -13,6 +13,7 @@
     "@types/react-image-gallery": "^1.2.4",
     "@types/react-slick": "^0.23.13",
     "antd": "^5.17.0",
+    "date-fns": "^3.6.0",
     "gsap": "^3.12.5",
     "lightgallery": "^2.7.2",
     "next": "14.2.3",
