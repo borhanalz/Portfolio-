@@ -16,8 +16,8 @@ export default function Home() {
       <Image src={myImage} alt="BorhanAlizdeh" className="w-36 sm:w-64 md:w-52 inline-block rounded-full"/>
      <Defination/>
       <div className="space-x-5 mt-20">
-        <button className="bg-transparent border p-5 rounded-3xl text-white">Start Cooperation</button>
-        <button className="bg-transparent border p-5 rounded-3xl text-white">View All Works</button>
+        <button className="bg-transparent border p-5 rounded-3xl">Start Cooperation</button>
+        <button className="bg-transparent border p-5 rounded-3xl">View All Works</button>
       </div>
     </div>
   </div>

@@ -66,51 +66,51 @@ const Works = () => {
         </p>
       </div>
       <Slider {...settings}>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
         </div>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
         </div>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
         </div>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
         </div>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
         </div>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
         </div>
-        <div className="shadow-2xl cursor-pointer bg-[#2a2a31] rounded-xl mt-5">
+        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
           <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4">
+          <div className="py-4 border border-t-2">
           <p className="text-center">Tipax Promotion Panel</p>
           <p className="text-gray-400 text-center">Full Panel</p>
           </div>
