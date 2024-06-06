@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import myImage from "Assets/Images/BorhanAlizadehImg.png";
+
 const AboutMe = () => {
   return (
     <div className="mt-32">
@@ -51,7 +52,7 @@ const AboutMe = () => {
             with clarity and insight.`}
           </p>
           <div className="text-center mt-5">
-            <Button className="bg-customColors-primaryTwo w-44">Download CV</Button>
+            <Button className="bg-customColors-primaryTwo w-44"><a href='/assets/cv.pdf' download={'borhan_alizadeh.pdf'}>Download CV</a></Button>
           </div>
         </div>
       </div>

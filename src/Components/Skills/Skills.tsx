@@ -87,7 +87,7 @@ const Skills = () => {
       <p className="text-3xl text-center opacity-45 md:text-[40px] text-[#A6BBCC]">
         Skills
       </p>
-      <div className="text-2xl text-gray-300 grid mt-10 grid-cols-3 gap-14">
+      <div className="text-2xl text-gray-300 grid mt-10 grid-cols-1 md:grid-cols-3 gap-14">
         {skillsData.map((skill) => {
           return (
             <div

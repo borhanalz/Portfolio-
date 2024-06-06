@@ -1,29 +1,111 @@
 "use client";
-import { Divider, Modal } from "antd";
 import Image from "next/image";
-import React, { useRef } from "react";
-import { FaCss3, FaReact } from "react-icons/fa";
+import React, { useState } from "react";
 import Slider from "react-slick";
-import promotionLoginImg from "Assets/Images/PromotionLogin.png";
-import LightGallery from 'lightgallery/react';
-import 'lightgallery/scss/lightgallery.scss';
-import 'lightgallery/scss/lg-zoom.scss';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgZoom from 'lightgallery/plugins/zoom';
-const Works = () => {
+import "lightgallery/scss/lightgallery.scss";
+import "lightgallery/scss/lg-zoom.scss";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+import { CgClose } from "react-icons/cg";
 
-  // const lgRef:any = useRef(null);
-  // const images = [
-  //   { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', alt: 'Image 1' },
-  //   { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', alt: 'Image 2' },
-  //   { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEzQhMzN0sJnGfqdi2aHD7fzZWirfyYB1DoFc7EQPiUQ&s', alt: 'Image 3' },
-  //   // Add more images as needed
-  // ];
-  // const openGallery = () => {
-  //   if (lgRef.current) {
-  //     lgRef.current.openGallery();
-  //   }
-  // };
+const Works = () => {
+  const images = [
+    {
+      original: "/assets/promotion/login.png",
+      thumbnail: "/assets/promotion/login.png",
+      title:'Tipax Promotion Panel',
+      gallery: [
+        {
+          original: "/assets/promotion/login.png",
+          thumbnail: "/assets/promotion/login.png",
+        },
+        {
+          original: "/assets/promotion/page1.png",
+          thumbnail: "/assets/promotion/page1.png",
+        },
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+        {
+          original: "/assets/promotion/page3.png",
+          thumbnail: "/assets/promotion/page3.png",
+        },
+        {
+          original: "/assets/promotion/page4.png",
+          thumbnail: "/assets/promotion/page4.png",
+        },
+      ],
+    },
+    {
+      original: "/assets/priceEngImg/login.png",
+      thumbnail: "/assets/priceEngImg/login.png",
+      title:'Tipax Promotion Panel',
+      gallery: [
+        {
+          original: "/assets/priceEngImg/page1.png",
+          thumbnail: "/assets/priceEngImg/page1.png",
+        },
+        {
+          original: "/assets/priceEngImg/page2.png",
+          thumbnail: "/assets/priceEngImg/page2.png",
+        },
+        {
+          original: "/assets/priceEngImg/page3.png",
+          thumbnail: "/assets/priceEngImg/page3.png",
+        },
+        {
+          original: "/assets/priceEngImg/page4.png",
+          thumbnail: "/assets/priceEngImg/page4.png",
+        },
+      ],
+    },
+    {
+      original: "/assets/promotion/login.png",
+      thumbnail: "/assets/promotion/login.png",
+      title:'Tipax Promotion Panel',
+      gallery: [
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+      ],
+    },
+    {
+      original: "/assets/promotion/login.png",
+      thumbnail: "/assets/promotion/login.png",
+      title:'Tipax Promotion Panel',
+      gallery: [
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+      ],
+    },
+    {
+      original: "/assets/promotion/login.png",
+      thumbnail: "/assets/promotion/login.png",
+      title:'Tipax Promotion Panel',
+      gallery: [
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+        {
+          original: "/assets/promotion/page2.png",
+          thumbnail: "/assets/promotion/page2.png",
+        },
+      ],
+    },
+  ];
   const settings = {
     dots: true,
     infinite: false,
@@ -38,26 +120,36 @@ const Works = () => {
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const handleImageClick = (index: any) => {
+    setCurrentImageIndex(index);
+    setIsGalleryOpen(true);
+  };
+  const handleGalleryClose = () => {
+    setIsGalleryOpen(false);
+  };
+
   return (
     <div className="mt-20">
       <div className="my-20">
@@ -66,79 +158,23 @@ const Works = () => {
         </p>
       </div>
       <Slider {...settings}>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
+        {images.map((img, index) => (
+          <div key={index} className="cursor-pointer shadow-md" onClick={() => handleImageClick(index)}>
+            <Image src={img.original} alt={`Slide ${index}`} width={500} height={500}/>
+            <div className="p-2 bg-zinc-600 text-white">
+              <p>{img.title}</p>
+            </div>
           </div>
-        </div>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
-          </div>
-        </div>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
-          </div>
-        </div>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
-          </div>
-        </div>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
-          </div>
-        </div>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
-          </div>
-        </div>
-        <div className="shadow-2xl cursor-pointer border rounded-xl mt-5">
-          <Image src={promotionLoginImg} className="rounded-t-2xl" />
-          <div className="py-4 border border-t-2">
-          <p className="text-center">Tipax Promotion Panel</p>
-          <p className="text-gray-400 text-center">Full Panel</p>
-          </div>
-        </div>
+        ))}
       </Slider>
-      {/* <div>
-      <img
-        src={images[0].thumb}
-        alt={images[0].alt}
-        style={{ cursor: 'pointer' }}
-        onClick={openGallery}
-      />
-      <LightGallery
-        onInit={(ref) => {
-          if (ref) {
-            lgRef.current = ref.instance;
-          }
-        }}
-        speed={500}
-        plugins={[lgThumbnail, lgZoom]}
-        dynamic
-        dynamicEl={images.map((image) => ({
-          src: image.src,
-          thumb: image.thumb,
-          alt: image.alt,
-        }))}
-      />
-    </div> */}
+      {isGalleryOpen && (
+        <div className="gallery-modal">
+          <CgClose color="white" className="absolute top-5 right-5 cursor-pointer" onClick={handleGalleryClose}/>
+          <ImageGallery items={images[currentImageIndex].gallery} />
+        </div>
+      )}
+
+      <div></div>
     </div>
   );
 };
