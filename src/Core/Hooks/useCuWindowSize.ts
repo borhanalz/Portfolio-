@@ -1,20 +1,39 @@
-'use client'
-import React, { useEffect, useState } from 'react'
+'use client';
+import React, { useEffect, useState } from 'react';
 
-interface IwindowSize{
-    width:number,height:number
+interface IWindowSize {
+  width: number;
+  height: number;
 }
 
-const useCuWindowSize = () => {
-    const [windowSize, setwindowSize] = useState<IwindowSize>({width:window.innerWidth,height:window.innerHeight})
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState<IWindowSize>({
+    width: 0, // Initialize with default values to avoid SSR issues
+    height: 0,
+  });
 
-    useEffect(() => {
-        window.addEventListener('resize',()=>{
-            setwindowSize({width:window.innerWidth,height:window.innerHeight});
-        })
-    }, [])
-    
-  return {windowSize}
-}
+  useEffect(() => {
+    // Check if the window object is available (only in the browser)
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
 
-export default useCuWindowSize
+      // Set initial size
+      handleResize();
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
+
+  return windowSize;
+};
+
+export default useWindowSize;
